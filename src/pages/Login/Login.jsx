@@ -12,7 +12,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { userLogin } = useAuthContext();
 
-  // const location = useLocation();
+  const location = useLocation();
   // console.log(location.state);
   const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ const Login = () => {
           draggable: true,
           theme: "colored",
         });
-        //   navigate(location?.state ? location.state : '/')
+          navigate(location?.state ? location.state : '/')
       })
       .catch((error) => {
         const errorCode = error.code;
