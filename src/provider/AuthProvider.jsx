@@ -1,18 +1,31 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
-import { createContext, useEffect, useState } from 'react';
-import { auth } from '../firebase/firebaseConfig';
+import {
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import { auth } from "../firebase/firebaseConfig";
 
-export const AuthContext = createContext(null)
+export const AuthContext = createContext(null);
 
 // google provider
 const GoogleProvider = new GoogleAuthProvider();
+// facebook provider
+const facebookProvider = new FacebookAuthProvider();
 
-const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-//signup
-const createUser = (email, password) => {
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  //signup
+  const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -21,17 +34,23 @@ const createUser = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
-//google signIn
-const googleSignIn = () => {
+  //google signIn
+  const googleSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, GoogleProvider);
   };
+  //facebook signIn
+  const facebookSignIn = () => {
+    setLoading(true);
+    return signInWithPopup(auth, facebookProvider);
+  }; 
+  
   //signOut
   const logOut = () => {
     return signOut(auth);
   };
- //update user profile
- const updateUserProfile = (name, photo) => {
+  //update user profile
+  const updateUserProfile = (name, photo) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -48,23 +67,20 @@ const googleSignIn = () => {
     };
   }, []);
 
-
-const authInfo = {
+  const authInfo = {
     user,
     loading,
     createUser,
     userLogin,
     googleSignIn,
+    facebookSignIn,
     updateUserProfile,
-    logOut
-}
+    logOut,
+  };
 
-
-    return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;

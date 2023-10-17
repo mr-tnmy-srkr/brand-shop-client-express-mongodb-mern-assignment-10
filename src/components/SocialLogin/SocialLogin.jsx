@@ -60,12 +60,13 @@ const handleSocialLogin = (media)=>{
         <button onClick={()=>handleSocialLogin(facebookSignIn)} className="flex-1 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">
           <p className="flex items-center justify-center gap-3">
           
-            <span> Continue With</span>{" "}
+            <span> Continue With</span>
             <span>
               <GrFacebook />
             </span>
           </p>
-        </button>
+        </button> 
+       
       </div>
       <ToastContainer
 autoClose={4000}
