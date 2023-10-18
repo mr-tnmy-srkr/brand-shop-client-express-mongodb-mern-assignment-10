@@ -6,14 +6,16 @@ import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+const all = import.meta.env;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDO2TRF0BunLWnsy7CVkNc1UTRjWJSLzcc",
-  authDomain: "brand-shop-express-mongodb.firebaseapp.com",
-  projectId: "brand-shop-express-mongodb",
-  storageBucket: "brand-shop-express-mongodb.appspot.com",
-  messagingSenderId: "498702243591",
-  appId: "1:498702243591:web:a2a5002d30cc998a9e17a2"
+  apiKey:all.VITE_APIKEY,
+  authDomain:all.VITE_AUTHDOMAIN,
+  projectId:all.VITE_PROJECTID,
+  storageBucket:all.VITE_STORAGEBUCKET,
+  messagingSenderId:all.VITE_MESSAGINGSENDERID,
+  appId:all.VITE_APPID
 };
 
 // Initialize Firebase
