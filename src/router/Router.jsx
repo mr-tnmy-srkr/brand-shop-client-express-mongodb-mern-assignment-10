@@ -7,6 +7,7 @@ import Signup from "../pages/Signup/Signup";
 import AddProducts from "../pages/AddProducts/AddProducts";
 import MyCart from "../pages/MyCart/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import BrandProduct from "../pages/BrandProduct/BrandProduct";
 
 const router = createBrowserRouter([
   {
@@ -17,21 +18,33 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch ("http://192.168.1.5:5000/brands")
-      },{
+        loader: () => fetch("http://192.168.1.5:5000/brands"),
+      },
+      {
+        path: "/:brandName",
+        element: <BrandProduct></BrandProduct>,
+        loader: ({params}) => fetch(`http://192.168.1.5:5000/${params.brandName}`),
+      },
+      {
         path: "/addProduct",
-        element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>,
-      },{
+        element: (
+          <PrivateRoute>
+            <AddProducts></AddProducts>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/myCart",
         element: <MyCart></MyCart>,
       },
       {
         path: "/login",
         element: <Login></Login>,
-      },{
+      },
+      {
         path: "/signup",
         element: <Signup></Signup>,
-      }
+      },
     ],
   },
 ]);
