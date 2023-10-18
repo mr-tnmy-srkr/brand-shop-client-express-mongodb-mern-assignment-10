@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch ("http://192.168.1.5:5000/brands")
       },{
         path: "/addProduct",
         element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>,
