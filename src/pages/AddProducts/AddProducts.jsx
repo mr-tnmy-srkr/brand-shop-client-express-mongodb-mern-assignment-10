@@ -1,9 +1,9 @@
 import axios from "axios";
-import Swal from 'sweetalert2'
-import 'animate.css';
+import Swal from "sweetalert2";
+import "animate.css";
 
 const AddProducts = () => {
-  const handleSaveToDb =async (e) => {
+  const handleSaveToDb = async (e) => {
     e.preventDefault();
     const form = e.target;
     const brand = form.brand.value;
@@ -15,34 +15,37 @@ const AddProducts = () => {
     const description = form.description.value;
 
     console.log(brand, image, name, type, price, rating, description);
-const newProduct = {brand,image,name,type,price,rating,description}
+    const newProduct = { brand, image, name, type, price, rating, description };
 
     try {
-      const response = await axios.post('http://192.168.1.5:5000/products',newProduct,{
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      const response = await axios.post(
+        "http://192.168.1.5:5000/products",
+        newProduct,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       console.log(response.data.insertedId);
-      if(response.data.insertedId){
+      if (response.data.insertedId) {
         Swal.fire({
           title: "Success!",
           showClass: {
-            popup: 'animate__animated animate__fadeInDown'
+            popup: "animate__animated animate__fadeInDown",
           },
           hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
+            popup: "animate__animated animate__fadeOutUp",
           },
           text: "Coffee added successfully",
           icon: "success",
           confirmButtonText: "Ok",
         });
-  
+        form.reset();
       }
     } catch (error) {
       console.error(error);
     }
-
   };
 
   return (
@@ -53,10 +56,11 @@ const newProduct = {brand,image,name,type,price,rating,description}
       <section className="max-w-4xl p-6 mx-auto  rounded-md shadow-md bg-gray-300">
         <form onSubmit={handleSaveToDb}>
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 ">
-
-          <div>
+            <div>
               <label className="label ">
-                <span className="label-text text-xl font-semibold text-xl font-semibold">Brand Name</span>
+                <span className="label-text text-xl font-semibold text-xl font-semibold">
+                  Brand Name
+                </span>
               </label>
               {/*  <input
                name="brand"
@@ -71,9 +75,7 @@ const newProduct = {brand,image,name,type,price,rating,description}
                 className="block w-full px-4 py-2 mt-2 border border-gray-200 rounded-md dark:bg-gray-200 dark:text-black dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                 required
               >
-                <option value="">
-                  Select a category
-                </option>
+                <option value="">Select a category</option>
                 <option value="xiaomi">Xiaomi</option>
                 <option value="hp">Hp</option>
                 <option value="dell">Dell</option>
@@ -84,7 +86,9 @@ const newProduct = {brand,image,name,type,price,rating,description}
             </div>
             <div>
               <label className="label">
-                <span className="label-text text-xl font-semibold">Image url</span>
+                <span className="label-text text-xl font-semibold">
+                  Image url
+                </span>
               </label>
               <input
                 name="image"
@@ -107,7 +111,7 @@ const newProduct = {brand,image,name,type,price,rating,description}
                 autoComplete="on"
               />
             </div>
-          
+
             <div>
               <label className="label">
                 <span className="label-text text-xl font-semibold">Type</span>
@@ -148,7 +152,9 @@ const newProduct = {brand,image,name,type,price,rating,description}
 
             <div>
               <label className="label">
-                <span className="label-text text-xl font-semibold">Description</span>
+                <span className="label-text text-xl font-semibold">
+                  Description
+                </span>
               </label>
               <textarea
                 className="block w-full px-4 py-2 mt-2   border border-gray-200 rounded-md dark:bg-gray-200 dark:text-black dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
