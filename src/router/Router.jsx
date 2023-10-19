@@ -8,6 +8,7 @@ import AddProducts from "../pages/AddProducts/AddProducts";
 import MyCart from "../pages/MyCart/MyCart";
 import PrivateRoute from "./PrivateRoute";
 import BrandProduct from "../pages/BrandProduct/BrandProduct";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: "/:brandName",
         element: <BrandProduct></BrandProduct>,
+        loader: ({params}) => fetch(`http://192.168.1.5:5000/${params.brandName}`),
+      }, 
+      {
+        path: "/:brandName/:id",
+        element:  <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader: ({params}) => fetch(`http://192.168.1.5:5000/${params.brandName}`),
       },
       {
