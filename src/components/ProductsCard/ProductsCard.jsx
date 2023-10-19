@@ -30,12 +30,12 @@ const ProductsCard = ( {product} ) => {
             </div>
             <p>{`${description.length>150 ? description.slice(0,150) : description}`} <span className={`font-bold cursor-pointer ${description.length<150 && "hidden"}`}>...Read more</span></p>
             <div className="card-actions justify-end">
-              <Link to={`/${brand}/${_id}`}><button className="btn btn-primary capitalize text-white">
+              <Link to={`/product/${brand}/${_id}`}><button className="btn btn-primary capitalize text-white">
                 View Details
               </button></Link>
-              <button className="btn btn-primary capitalize text-white">
+              <Link to={`/product/${brand}/${_id}/updateProduct`}><button className="btn btn-primary capitalize text-white">
                 Update Details
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

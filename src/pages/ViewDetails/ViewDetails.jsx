@@ -9,7 +9,7 @@ const ViewDetails = () => {
   const [loading, setLoading] = useState(true);
   const products = useLoaderData();
   const { id } = useParams();
-  // console.log(products,id);
+  console.log(products,id);
 
   useEffect(() => {
     const filteredProduct = products.find((product) => product._id === id);
@@ -59,7 +59,7 @@ const ViewDetails = () => {
               <p>{description}</p>
             </div>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Watch</button>
+              <button className="btn btn-primary capitalize text-white">Add to cart</button>
             </div>
           </div>
         </div>
