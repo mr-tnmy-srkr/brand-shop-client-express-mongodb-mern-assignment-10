@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import Swal from "sweetalert2";
 
 const ViewDetails = () => {
   const [filteredItem, setFilteredItem] = useState([]);
   const [loading, setLoading] = useState(true);
   const products = useLoaderData();
   const { id } = useParams();
-  console.log(products,id);
+  console.log(products);
 
 const navigate = useNavigate()
 
@@ -20,24 +21,51 @@ const navigate = useNavigate()
     setLoading(false);
   }, [id, products]);
 
-  console.log(filteredItem);
+  // console.log(filteredItem);
 
   const { _id, brand, image, name, type, price, rating, description } =
     filteredItem || {};
-  console.log(parseFloat(rating));
+  // console.log(parseFloat(rating));
 
 
 //Add to cart
 
-const handleAddToCart = (products)=>{
-  console.log(products);
+const handleAddToCart = (id)=>{
+  // console.log(id);
+ const findProduct = products.find(item=>item._id === id);
+ console.log(findProduct);
+
+fetch("http://localhost:5000/cartProduct", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(findProduct),
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+
+
+    if (data.insertedId) {
+      Swal.fire({
+        title: "Success!",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+        text: "Product adds to cart successfully",
+        icon: "success",
+        confirmButtonText: "Ok",
+      })
+
+    }
+  })
+  .catch(error=>console.error(error));
+ 
 }
-
-
-
-
-
-
 
 
   return (
@@ -78,7 +106,7 @@ const handleAddToCart = (products)=>{
             <div className=" ">
               <div className="flex">
               <button onClick={()=>navigate(-1)} className="btn btn-info capitalize text-white mr-4">Go Back</button>
-              <button onClick={()=>handleAddToCart(products)} className="btn btn-primary capitalize text-white">Add to cart</button>
+              <button onClick={()=>handleAddToCart(_id)} className="btn btn-primary capitalize text-white">Add to cart</button>
               </div>
             </div>
           </div>
