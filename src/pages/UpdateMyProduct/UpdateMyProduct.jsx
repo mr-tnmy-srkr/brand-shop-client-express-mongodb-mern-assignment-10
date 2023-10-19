@@ -9,7 +9,7 @@ const UpdateMyProduct = () => {
   const { _id, brand, image, name, type, price, rating, description } =
     product || {};
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleUpdateProduct = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const navigate = useNavigate();
     };
     console.log(updatedProduct);
 
-   /*  fetch(`http://localhost:5000/product/updateProduct/${brand}/${_id}`, {
+    /*  fetch(`https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${brand}/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -46,44 +46,44 @@ const navigate = useNavigate();
       })
       .catch((error) => console.error(error)); */
 
-
-      try {
-        const response = await fetch(`http://localhost:5000/product/updateProduct/${brand}/${_id}`, {
+    try {
+      const response = await fetch(
+        `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${brand}/${_id}`,
+        {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(updatedProduct),
+        }
+      );
+      const result = await response.json();
+      console.log(result);
+
+      if (result.acknowledged) {
+        Swal.fire({
+          title: "Success!",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+          text: "Product updated successfully",
+          icon: "success",
+          confirmButtonText: "Ok",
         });
-        const result = await response.json();
-        console.log(result);
-
-        if (result.acknowledged) {
-            Swal.fire({
-              title: "Success!",
-              showClass: {
-                popup: "animate__animated animate__fadeInDown",
-              },
-              hideClass: {
-                popup: "animate__animated animate__fadeOutUp",
-              },
-              text: "Product updated successfully",
-              icon: "success",
-              confirmButtonText: "Ok",
-            })}
-        
-      } catch (error) {
-        console.error(error);
       }
-
-
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div>
-     <Helmet>
-            <title>Update product</title>
-        </Helmet>
+      <Helmet>
+        <title>Update product</title>
+      </Helmet>
       <div className="mb-8">
         <h1 className="my-8 text-center text-3xl font-semibold">
           Update Your Available Brands
@@ -221,7 +221,15 @@ const navigate = useNavigate();
               </button>
             </div>
           </form>
-<h2 className="text-xl inline font-semibold">Go back to previous page</h2><span onClick={()=>navigate(-1)}> <button className="btn btn-info text-white capitalize btn-sm">Click Here</button></span>
+          <h2 className="text-xl inline font-semibold">
+            Go back to previous page
+          </h2>
+          <span onClick={() => navigate(-1)}>
+            {" "}
+            <button className="btn btn-info text-white capitalize btn-sm">
+              Click Here
+            </button>
+          </span>
         </section>
       </div>
     </div>

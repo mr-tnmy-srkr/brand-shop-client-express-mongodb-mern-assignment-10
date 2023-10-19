@@ -8,18 +8,20 @@ import { Helmet } from "react-helmet-async";
 const MyCart = () => {
   const cartItems = useLoaderData();
   const [updatedCart, SetUpdatedCart] = useState(cartItems);
-//   console.log(updatedCart);
-//   console.log(cartItems);
+  //   console.log(updatedCart);
+  //   console.log(cartItems);
 
   const handleDelete = (id) => {
     // console.log(id);
 
     axios
-      .delete(`http://localhost:5000/myCart/${id}`)
+      .delete(
+        `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/myCart/${id}`
+      )
       .then((response) => {
         console.log("Delete request successful:", response.data);
 
-        if (response.data.deletedCount>0) {
+        if (response.data.deletedCount > 0) {
           Swal.fire({
             title: "Success!",
             showClass: {
@@ -32,9 +34,10 @@ const MyCart = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
-        
-        const filteredCart = updatedCart.filter((item) => item._id !== id);
-        SetUpdatedCart(filteredCart);}
+
+          const filteredCart = updatedCart.filter((item) => item._id !== id);
+          SetUpdatedCart(filteredCart);
+        }
       })
       .catch((error) => {
         console.error("Error deleting data:", error);
@@ -43,9 +46,9 @@ const MyCart = () => {
 
   return (
     <div className="min-h-[50vh] my-8">
-     <Helmet>
-            <title>Shopify | Cart</title>
-        </Helmet>
+      <Helmet>
+        <title>Shopify | Cart</title>
+      </Helmet>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

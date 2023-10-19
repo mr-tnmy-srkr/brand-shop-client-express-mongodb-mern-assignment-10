@@ -5,6 +5,7 @@ import useAuthContext from "../../../hook/useAuthContext";
 import { CgCloseR } from "react-icons/cg";
 import { RxAvatar } from "react-icons/rx";
 import { ToastContainer, toast } from "react-toastify";
+import shopify from "../../../assets/shopify.svg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -92,6 +93,8 @@ const Navbar = () => {
         });
   };
 
+
+
   return (
     <div>
       <div className="navbar bg-gray-100 shadow-lg px-0">
@@ -122,7 +125,7 @@ const Navbar = () => {
             className="font-bold text-2xl cursor-pointer text-center flex items-center"
           >
             <div className="">
-              <img className="h-10 w-14" src="/public/shopify.svg" alt="" />
+              <img className="h-10 w-14" src={shopify} alt="" />
             </div>
             <div>
               <span className="text-[#95BF46] text-5xl">S</span>

@@ -30,7 +30,7 @@ const Slider = () => {
         navigation={true}
       
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-[50vh] md:h-[85vh] contain"
+        className="mySwiper h-[50vh] md:h-[85vh] contain z-0"
       >
         <SwiperSlide><img className="object-cover" src="https://i.ibb.co/ZhCwzd1/m029t0090-b-black-friday-theme-24july23.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img className="object-cover" src="https://i.ibb.co/23xL51K/18899194.jpg" alt="" /></SwiperSlide>

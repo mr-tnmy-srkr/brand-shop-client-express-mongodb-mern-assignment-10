@@ -20,13 +20,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/brands"
+          ),
       },
       {
         path: "/product/:brandName",
         element: <BrandProduct></BrandProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brandName}`),
+          fetch(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/${params.brandName}`
+          ),
       },
       {
         path: "/addProduct",
@@ -40,24 +45,37 @@ const router = createBrowserRouter([
         path: "/product/:brandName/:id",
         element: (
           <PrivateRoute>
-            <ViewDetails></ViewDetails>{" "}
+            <ViewDetails></ViewDetails>
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brandName}`),
+          fetch(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/${params.brandName}`
+          ),
       },
       {
         path: "/product/updateProduct/:brandName/:id",
-        element: <UpdateMyProduct></UpdateMyProduct>,
+        element: (
+          <PrivateRoute>
+            <UpdateMyProduct></UpdateMyProduct>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/product/updateProduct/${params.brandName}/${params.id}`
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${params.brandName}/${params.id}`
           ),
       },
       {
         path: "/myCart",
-        element: <MyCart></MyCart>,
-        loader: ()=>fetch(`http://localhost:5000/myCart`)
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/myCart`
+          ),
       },
       {
         path: "/login",

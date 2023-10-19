@@ -20,7 +20,7 @@ const AddProducts = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/products",
+        "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/products",
         newProduct,
         {
           headers: {
@@ -51,10 +51,9 @@ const AddProducts = () => {
 
   return (
     <div className="mb-8">
-     <Helmet
-     >
-            <title>Add products</title>
-        </Helmet>
+      <Helmet>
+        <title>Add products</title>
+      </Helmet>
       <h1 className="my-8 text-center text-3xl font-semibold">
         Add Your Available Brands
       </h1>
