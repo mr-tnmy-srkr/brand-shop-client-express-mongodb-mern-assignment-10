@@ -1,4 +1,5 @@
 // import axios from "axios";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -80,6 +81,9 @@ const navigate = useNavigate();
 
   return (
     <div>
+     <Helmet>
+            <title>Update product</title>
+        </Helmet>
       <div className="mb-8">
         <h1 className="my-8 text-center text-3xl font-semibold">
           Update Your Available Brands

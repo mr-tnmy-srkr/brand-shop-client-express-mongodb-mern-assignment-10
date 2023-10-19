@@ -106,9 +106,9 @@ const Signup = () => {
 
   return (
     <div>
-    {/*   <Helmet>
+     <Helmet>
             <title>Sign Up</title>
-        </Helmet> */}
+        </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-200 py-20">
         <div className="bg-transparent p-10 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">

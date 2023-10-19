@@ -119,14 +119,14 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="font-bold text-2xl cursor-pointer text-center flex items-center gap-2"
+            className="font-bold text-2xl cursor-pointer text-center flex items-center"
           >
-            <div className="hidden md:block">
-              <img className="h-10 w-14" src="" alt="" />
+            <div className="">
+              <img className="h-10 w-14" src="/public/shopify.svg" alt="" />
             </div>
             <div>
-              <span className="text-blue-900 text-5xl">E</span>
-              <span className="text-blue-900">Brand</span>
+              <span className="text-[#95BF46] text-5xl">S</span>
+              <span className="text-[#95BF46]">hopify</span>
             </div>
           </Link>
         </div>

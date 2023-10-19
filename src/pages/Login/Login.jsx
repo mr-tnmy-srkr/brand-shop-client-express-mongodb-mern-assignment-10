@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { BiShow } from "react-icons/bi";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
+import { Helmet } from "react-helmet-async";
 // import { Helmet } from "react-helmet-async";
 
 const Login = () => {
@@ -57,9 +58,9 @@ const Login = () => {
 
   return (
     <div>
-      {/*  <Helmet>
+      <Helmet>
             <title>Login</title>
-        </Helmet> */}
+        </Helmet>
 
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-200 py-20">
         <div className="bg-transparent p-10 rounded-lg shadow-lg w-full max-w-md">

@@ -1,6 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import "animate.css";
+import { Helmet } from "react-helmet-async";
 
 const AddProducts = () => {
   const handleSaveToDb = async (e) => {
@@ -50,6 +51,10 @@ const AddProducts = () => {
 
   return (
     <div className="mb-8">
+     <Helmet
+     >
+            <title>Add products</title>
+        </Helmet>
       <h1 className="my-8 text-center text-3xl font-semibold">
         Add Your Available Brands
       </h1>

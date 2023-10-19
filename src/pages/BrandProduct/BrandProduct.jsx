@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ProductsCard from "../../components/ProductsCard/ProductsCard";
 import Slider from "../../components/Slider/Slider";
+import { Helmet } from "react-helmet-async";
 
 const BrandProduct = () => {
   const products = useLoaderData();
@@ -10,6 +11,9 @@ const BrandProduct = () => {
   return (
     <>
     <div>
+    <Helmet>
+            <title>Shopify | Product</title>
+        </Helmet>
       <Slider></Slider>
     </div>
       <div

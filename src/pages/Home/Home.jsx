@@ -3,6 +3,7 @@ import Banner from "../../components/Header/Banner/Banner";
 import BrandsCard from "../../components/BrandsCard/BrandsCard";
 import Accordions from "../../components/Accordions/Accordions";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -10,6 +11,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+            <title>Shopify | Home</title>
+        </Helmet>
       <div>
         <Banner></Banner>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { AiFillStar } from "react-icons/ai";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
@@ -70,6 +71,9 @@ fetch("http://localhost:5000/cartProduct", {
 
   return (
     <div className="my-8">
+     <Helmet>
+            <title>{`${brand}-${type}`}</title>
+        </Helmet>
       {loading ? (
         ""
       ) : (
