@@ -33,14 +33,14 @@ const ProductsCard = ( {product} ) => {
               <Link to={`/product/${brand}/${_id}`}><button className="btn btn-primary capitalize text-white">
                 View Details
               </button></Link>
-              <Link to={`/product/${brand}/${_id}/updateProduct`}><button className="btn btn-primary capitalize text-white">
+              <Link to={`/product/updateProduct/${brand}/${_id}`}><button className="btn btn-primary capitalize text-white">
                 Update Details
               </button></Link>
             </div>
           </div>
         </div>
       }
-     
+   
     </div>
   );
 };

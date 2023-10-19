@@ -14,12 +14,12 @@ const AddProducts = () => {
     const rating = form.rating.value;
     const description = form.description.value;
 
-    console.log(brand, image, name, type, price, rating, description);
+    // console.log(brand, image, name, type, price, rating, description);
     const newProduct = { brand, image, name, type, price, rating, description };
 
     try {
       const response = await axios.post(
-        "http://192.168.1.5:5000/products",
+        "http://localhost:5000/products",
         newProduct,
         {
           headers: {
@@ -37,7 +37,7 @@ const AddProducts = () => {
           hideClass: {
             popup: "animate__animated animate__fadeOutUp",
           },
-          text: "Coffee added successfully",
+          text: "Product added successfully",
           icon: "success",
           confirmButtonText: "Ok",
         });
@@ -51,7 +51,7 @@ const AddProducts = () => {
   return (
     <div className="mb-8">
       <h1 className="my-8 text-center text-3xl font-semibold">
-        Add Yours Available Brands
+        Add Your Available Brands
       </h1>
       <section className="max-w-4xl p-6 mx-auto  rounded-md shadow-md bg-gray-300">
         <form onSubmit={handleSaveToDb}>
@@ -181,18 +181,3 @@ const AddProducts = () => {
 };
 
 export default AddProducts;
-
-/* 
-<select
-name="category"
-value={selectedCategory}
-onChange={(e) => setSelectedCategory(e.target.value)}
-className="block w-full px-4 py-2 mt-2 border border-gray-200 rounded-md"
-required
->
-<option value="" disabled>Select a category</option>
-<option value="Electronics">Electronics</option>
-<option value="Clothing">Clothing</option>
-<option value="Books">Books</option>
-{/* Add more options as needed */
-//</select> */
