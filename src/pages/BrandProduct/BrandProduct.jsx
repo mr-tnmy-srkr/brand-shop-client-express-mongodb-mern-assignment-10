@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ProductsCard from "../../components/ProductsCard/ProductsCard";
+import Slider from "../../components/Slider/Slider";
 
 const BrandProduct = () => {
   const products = useLoaderData();
@@ -8,6 +9,9 @@ const BrandProduct = () => {
 
   return (
     <>
+    <div>
+      <Slider></Slider>
+    </div>
       <div
         className={`${
           products.length ? "grid md:grid-cols-2 gap-10" : ""

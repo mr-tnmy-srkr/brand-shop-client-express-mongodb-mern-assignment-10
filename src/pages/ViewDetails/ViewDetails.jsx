@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 
 const ViewDetails = () => {
@@ -10,6 +10,8 @@ const ViewDetails = () => {
   const products = useLoaderData();
   const { id } = useParams();
   console.log(products,id);
+
+const navigate = useNavigate()
 
   useEffect(() => {
     const filteredProduct = products.find((product) => product._id === id);
@@ -23,6 +25,21 @@ const ViewDetails = () => {
   const { _id, brand, image, name, type, price, rating, description } =
     filteredItem || {};
   console.log(parseFloat(rating));
+
+
+//Add to cart
+
+const handleAddToCart = (products)=>{
+  console.log(products);
+}
+
+
+
+
+
+
+
+
   return (
     <div className="my-8">
       {loading ? (
@@ -58,8 +75,11 @@ const ViewDetails = () => {
               </div>
               <p>{description}</p>
             </div>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary capitalize text-white">Add to cart</button>
+            <div className=" ">
+              <div className="flex">
+              <button onClick={()=>navigate(-1)} className="btn btn-info capitalize text-white mr-4">Go Back</button>
+              <button onClick={()=>handleAddToCart(products)} className="btn btn-primary capitalize text-white">Add to cart</button>
+              </div>
             </div>
           </div>
         </div>
