@@ -10,7 +10,7 @@ const Home = () => {
   // console.log(brands);
 
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:text-gray-100">
       <Helmet>
             <title>Shopify | Home</title>
         </Helmet>
@@ -28,8 +28,8 @@ const Home = () => {
       </div>
       <div className="mb-8">
         <Accordions></Accordions>
-      </div>
-      <div className="my-8">
+      </div> 
+      <div className="">
         <ContactUs></ContactUs>
       </div>
     </div>

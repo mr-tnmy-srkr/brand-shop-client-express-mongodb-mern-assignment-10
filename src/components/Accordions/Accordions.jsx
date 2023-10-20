@@ -1,22 +1,22 @@
-import {
+/* import {
     Accordion,
     AccordionItem,
     AccordionItemHeading,
     AccordionItemButton,
     AccordionItemPanel,
 } from 'react-accessible-accordion';
-
+ */
 // Demo styles, see 'Styles' section below for some notes on use.
-import 'react-accessible-accordion/dist/fancy-example.css';
+// import 'react-accessible-accordion/dist/fancy-example.css';
 
 export default function Accordions() {
     return (
-        <div>
+    /*     <div className=''>
         <h1 className='text-5xl font-bold text-center mb-8 mt-16'>FAQ</h1>
-        <Accordion>
+        <Accordion className='dark:bg-gray-600 dark:text-gray-100'>
             <AccordionItem>
                 <AccordionItemHeading>
-                    <AccordionItemButton>
+                    <AccordionItemButton >
                         What harsh truths do you prefer to ignore?
                     </AccordionItemButton>
                 </AccordionItemHeading>
@@ -44,6 +44,9 @@ export default function Accordions() {
                 </AccordionItemPanel>
             </AccordionItem>
         </Accordion>
-        </div>
+        </div> */
+        
+<div>accor</div>
+
     );
 }

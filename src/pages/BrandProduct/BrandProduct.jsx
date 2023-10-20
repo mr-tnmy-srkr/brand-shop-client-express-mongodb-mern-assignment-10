@@ -10,7 +10,7 @@ const BrandProduct = () => {
 
   return (
     <>
-    <div>
+    <div className="">
     <Helmet>
             <title>Shopify | Product</title>
         </Helmet>
@@ -19,7 +19,7 @@ const BrandProduct = () => {
       <div
         className={`${
           products.length ? "grid md:grid-cols-2 gap-10" : ""
-        }  my-8`}
+        }  py-16 dark:bg-gray-600 dark:text-gray-100`}
       >
         {products.length ? (
           products?.map((product) => (

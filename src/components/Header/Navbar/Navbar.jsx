@@ -15,14 +15,14 @@ const Navbar = () => {
   // console.log(show);
   const NavLinks = (
     <>
-      <li className="text-lg font-medium">
+      <li className="">
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
               : isActive
-              ? "underline text-blue-700 font-bold text-lg"
+              ? "underline  font-bold text-lg dark:text-white"
               : "text-lg font-medium"
           }
         >
@@ -36,7 +36,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "underline text-blue-700 font-bold text-lg"
+              ? "underline  dark:text-white font-bold text-lg"
               : "text-lg font-medium"
           }
         >
@@ -50,7 +50,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "underline text-blue-700 font-bold text-lg"
+              ? "underline  dark:text-white font-bold text-lg"
               : "text-lg font-medium"
           }
         >
@@ -96,8 +96,8 @@ const Navbar = () => {
 
 
   return (
-    <div>
-      <div className="navbar bg-gray-100 shadow-lg px-0">
+    <div className=" ">
+      <div className="navbar bg-gray-100 shadow-lg px-0 dark:bg-gray-800 dark:text-gray-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -114,7 +114,7 @@ const Navbar = () => {
             {isOpen || (
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content mt-3 z-[1] p-5 shadow bg-base-100 rounded-box w-40 top-11`}
+                className={` menu-sm dropdown-content mt-3 z-[1] p-5 shadow rounded-box w-48 top-11 space-y-3 bg-white dark:bg-gray-800 dark:text-gray-100`}
               >
                 {NavLinks}
               </ul>
@@ -134,7 +134,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
+          <ul className="relative gap-5  menu-horizontal px-1 ">{NavLinks}</ul>
         </div>
         <div className="navbar-end">
           <div className="mr-3 text-xl font-bold hidden md:block">
@@ -169,11 +169,11 @@ const Navbar = () => {
           {user && show && (
             <ul
               tabIndex={0}
-              className={`font-bold menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box  absolute top-12 lg:top-16 right-7 space-y-3`}
+              className={`font-bold menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box  absolute top-24 lg:top-24 right-16 space-y-3 dark:bg-gray-800 dark:text-gray-100`}
             >
               <li className="text-2xl ">{user?.displayName}</li>
-              <li className="text-lg">Update Profile</li>
-              <li className="text-lg">Settings</li>
+              {/* <li className="text-lg">Update Profile</li> */}
+              {/* <li className="text-lg">Settings</li> */}
               <li onClick={handleLogout} className="text-lg cursor-pointer">
                 {user && "Logout"}
               </li>
@@ -183,13 +183,13 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={handleLogout}
-              className="btn btn-info btn-circle capitalize ml-3 px-10 text-white text-lg"
+              className="btn btn-info bg-[#95BF46] hover:bg-green-400 border-0 btn-circle capitalize ml-3 px-10 text-white text-lg mr-2"
             >
               Logout
             </button>
           ) : (
             <Link to="/login" onClick={handleLogout}>
-              <button className="btn btn-primary btn-circle capitalize ml-3 px-10 text-white text-lg">
+              <button className="btn btn-primary bg-[#95BF46] hover:bg-green-400 border-0 btn-circle capitalize ml-3 px-10 text-white text-lg mr-2">
                 Login
               </button>
             </Link>

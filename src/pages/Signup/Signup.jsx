@@ -109,7 +109,7 @@ const Signup = () => {
      <Helmet>
             <title>Sign Up</title>
         </Helmet>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-200 py-20">
+      <div className="min-h-screen flex items-center justify-center  dark:bg-gradient-to-r from-gray-500 to-gray-300  py-20">
         <div className="bg-transparent p-10 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
             Sign Up
@@ -262,7 +262,7 @@ const Signup = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+              className="w-full bg-[#95BF46] hover:bg-green-400 border-0 text-white py-3 rounded  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
             >
               Sign Up
             </button>

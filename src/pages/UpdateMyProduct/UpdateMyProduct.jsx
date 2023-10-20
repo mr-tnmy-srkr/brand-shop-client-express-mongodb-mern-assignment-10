@@ -33,7 +33,7 @@ const UpdateMyProduct = () => {
     };
     console.log(updatedProduct);
 
-    /*  fetch(`https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${brand}/${_id}`, {
+    /*  fetch(`http://localhost:5000/product/updateProduct/${brand}/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const UpdateMyProduct = () => {
 
     try {
       const response = await fetch(
-        `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${brand}/${_id}`,
+        `http://localhost:5000/product/updateProduct/${brand}/${_id}`,
         {
           method: "PUT",
           headers: {
@@ -80,12 +80,12 @@ const UpdateMyProduct = () => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-gray-600 dark:text-gray-100">
       <Helmet>
         <title>Update product</title>
       </Helmet>
-      <div className="mb-8">
-        <h1 className="my-8 text-center text-3xl font-semibold">
+      <div className="pb-8">
+        <h1 className="py-8 text-center text-3xl font-semibold">
           Update Your Available Brands
         </h1>
         <section className="max-w-4xl p-6 mx-auto  rounded-md shadow-md bg-gray-300">
@@ -221,7 +221,7 @@ const UpdateMyProduct = () => {
               </button>
             </div>
           </form>
-          <h2 className="text-xl inline font-semibold">
+          <h2 className="text-xl inline font-semibold  dark:text-black">
             Go back to previous page
           </h2>
           <span onClick={() => navigate(-1)}>

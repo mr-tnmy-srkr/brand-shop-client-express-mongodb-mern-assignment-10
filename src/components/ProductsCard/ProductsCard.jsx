@@ -10,7 +10,7 @@ const ProductsCard = ( {product} ) => {
   return (
     <div>
       {
-        <div className="card card-compact bg-base-100 shadow-xl">
+        <div className="card card-compact bg-base-100 shadow-xl dark:bg-gray-800 dark:text-gray-100 pt-8 pb-4">
           <figure>
             <img className="h-96" src={image} alt={`${name}`} />
           </figure>
@@ -28,7 +28,7 @@ const ProductsCard = ( {product} ) => {
                 starSpacing="5px"
               /> <span className="btn btn-sm bg-green-500 text-white">{rating} <span className="text-white"><AiFillStar></AiFillStar></span></span>
             </div>
-            <p>{`${description.length>150 ? description.slice(0,150) : description}`} <span className={`font-bold cursor-pointer ${description.length<150 && "hidden"}`}>...Read more</span></p>
+            <p>{`${description.length>150 ? description.slice(0,150) : description}`} <Link to={`http://localhost:5173/product/${brand}/${_id}`} className={`font-bold cursor-pointer ${description.length<150 && "hidden"}`}>...Read more</Link></p>
             <div className="card-actions justify-end">
               <Link to={`/product/${brand}/${_id}`}><button className="btn btn-primary capitalize text-white">
                 View Details

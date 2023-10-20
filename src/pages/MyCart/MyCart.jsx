@@ -8,16 +8,20 @@ import { Helmet } from "react-helmet-async";
 const MyCart = () => {
   const cartItems = useLoaderData();
   const [updatedCart, SetUpdatedCart] = useState(cartItems);
-  //   console.log(updatedCart);
-  //   console.log(cartItems);
 
-  const handleDelete = (id) => {
+  // const currentUpdatedCart = updatedCart[0].findProduct
+    // console.log(updatedCart);
+    // console.log(cartItems);
+// .................................
+// const [showCart, setShowCart] = useState(updatedCart)
+// .................................
+
+
+  const handleDelete = (id,idx) => {
     // console.log(id);
 
-    axios
-      .delete(
-        `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/myCart/${id}`
-      )
+ axios
+      .delete(`http://localhost:5000/myCart/${id}`)
       .then((response) => {
         console.log("Delete request successful:", response.data);
 
@@ -35,17 +39,30 @@ const MyCart = () => {
             confirmButtonText: "Ok",
           });
 
-          const filteredCart = updatedCart.filter((item) => item._id !== id);
+          const filteredCart = updatedCart.filter((item) => item.findProduct._id !== id);
+          console.log(filteredCart);
           SetUpdatedCart(filteredCart);
+          
+//           const showCart = updatedCart.filter((item,id) => id !== idx);
+// setShowCart(showCart)
+          
         }
       })
       .catch((error) => {
         console.error("Error deleting data:", error);
-      });
+      });  
+
+/* console.log(id);
+console.log(idx+1);
+console.log(updatedCart);
+      const filteredCart = updatedCart.filter((item,idx) => item.findProduct._id !== id);
+      // const filteredCart = updatedCart.filter((item,id) => id !== idx);
+      console.log(filteredCart); */
+
   };
 
   return (
-    <div className="min-h-[50vh] my-8">
+    <div className="min-h-[50vh] py-8 dark:bg-gray-700 dark:text-gray-100">
       <Helmet>
         <title>Shopify | Cart</title>
       </Helmet>
@@ -71,6 +88,7 @@ const MyCart = () => {
             </tr>
           </thead>
           <tbody>
+            {/* {updatedCart?.map((item, idx) => ( */}
             {updatedCart?.map((item, idx) => (
               <tr
                 key={item._id}
@@ -80,14 +98,14 @@ const MyCart = () => {
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                  {`${idx + 1}. ${item.name}`}
+                  {`${idx + 1}. ${item.findProduct.name}`}
                 </th>
-                <td className="px-6 py-4">{item.brand}</td>
-                <td className="px-6 py-4">{item.type}</td>
-                <td className="px-6 py-4">{item.price}</td>
+                <td className="px-6 py-4">{item.findProduct.brand}</td>
+                <td className="px-6 py-4">{item.findProduct.type}</td>
+                <td className="px-6 py-4">{item.findProduct.price}</td>
                 <td className="px-6 py-4">
                   <button
-                    onClick={() => handleDelete(item._id)}
+                    onClick={() => handleDelete(item.findProduct._id,idx)}
                     type="submit"
                     className="bg-white p-2 rounded-lg font-medium text-blue-600 dark:text-blue-500 hover:underline"
                   >

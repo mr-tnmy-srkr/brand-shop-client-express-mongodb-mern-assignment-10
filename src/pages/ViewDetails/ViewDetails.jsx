@@ -11,7 +11,7 @@ const ViewDetails = () => {
   const [loading, setLoading] = useState(true);
   const products = useLoaderData();
   const { id } = useParams();
-  console.log(products);
+  // console.log(products);
 
   const navigate = useNavigate();
 
@@ -35,16 +35,13 @@ const ViewDetails = () => {
     const findProduct = products.find((item) => item._id === id);
     console.log(findProduct);
 
-    fetch(
-      "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/cartProduct",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(findProduct),
-      }
-    )
+    fetch("http://localhost:5000/cartProduct", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({findProduct}),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -68,7 +65,7 @@ const ViewDetails = () => {
   };
 
   return (
-    <div className="my-8">
+    <div className="py-8 dark:bg-gray-500 dark:text-gray-100">
       <Helmet>
         <title>{`${brand}-${type}`}</title>
       </Helmet>
@@ -79,7 +76,7 @@ const ViewDetails = () => {
           <h1 className=" bg-green-500 max-w-max px-2 rounded-xl text-xl font-bold text-white py-1 mb-8">
             Brand : {brand}
           </h1>
-          <div className="card card-side bg-base-100 shadow-xl flex-col md:flex-row items-center justify-center">
+          <div className="card card-side bg-base-100 shadow-xl flex-col md:flex-row items-center justify-center dark:bg-gray-500 dark:text-gray-100">
             <figure className="w-1/2 mx-auto md:w-full">
               <img src={image} alt={`${name}`} />
             </figure>
