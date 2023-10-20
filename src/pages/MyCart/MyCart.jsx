@@ -20,44 +20,62 @@ const MyCart = () => {
   const handleDelete = (id,idx) => {
     // console.log(id);
 
- axios
-      .delete(`http://localhost:5000/myCart/${id}`)
-      .then((response) => {
-        console.log("Delete request successful:", response.data);
+// ............................................................
+    console.log(id);
+    console.log(idx+1);
+    console.log(updatedCart);
+          const filteredCart = updatedCart.filter((item,idx) => item.findProduct._id !== id);
+          // const filteredCart = updatedCart.filter((item,id) => id !== idx);
+          console.log(filteredCart); 
+// ............................................................
 
-        if (response.data.deletedCount > 0) {
-          Swal.fire({
-            title: "Success!",
-            showClass: {
-              popup: "animate__animated animate__fadeInDown",
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutUp",
-            },
-            text: "Product deleted successfully",
-            icon: "success",
-            confirmButtonText: "Ok",
-          });
 
-          const filteredCart = updatedCart.filter((item) => item.findProduct._id !== id);
-          console.log(filteredCart);
-          SetUpdatedCart(filteredCart);
-          
 
-          
-        }
-      })
-      .catch((error) => {
-        console.error("Error deleting data:", error);
-      }); 
 
-/*  console.log(id);
-console.log(idx+1);
-console.log(updatedCart);
-      const filteredCart = updatedCart.filter((item,idx) => item.findProduct._id !== id);
-      // const filteredCart = updatedCart.filter((item,id) => id !== idx);
-      console.log(filteredCart);  */
+   Swal.fire({
+      title: 'Are you sure to delete it?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        axios
+        .delete(`http://localhost:5000/myCart/${id}`)
+        .then((response) => {
+          console.log("Delete request successful:", response.data);
+  
+          if (response.data.deletedCount > 0) {
+            Swal.fire({
+              title: "Success!",
+              showClass: {
+                popup: "animate__animated animate__fadeInDown",
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOutUp",
+              },
+              text: "Product deleted successfully",
+              icon: "success",
+              confirmButtonText: "Ok",
+            });
+  
+            const filteredCart = updatedCart.filter((item) => item.findProduct._id !== id);
+            console.log(filteredCart);
+            SetUpdatedCart(filteredCart);
+            
+  
+            
+          }
+        })
+        .catch((error) => {
+          console.error("Error deleting data:", error);
+        });
 
+    }
+  }) 
   };
 
   return (

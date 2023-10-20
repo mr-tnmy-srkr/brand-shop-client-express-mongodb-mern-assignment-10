@@ -169,7 +169,7 @@ const Navbar = () => {
           {user && show && (
             <ul
               tabIndex={0}
-              className={`font-bold menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box  absolute top-24 lg:top-24 right-16 space-y-3 dark:bg-gray-800 dark:text-gray-100`}
+              className={`font-bold menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box  absolute top-12 lg:top-12 right-16 space-y-3 dark:bg-gray-800 dark:text-gray-100`}
             >
               <li className="text-2xl ">{user?.displayName}</li>
               {/* <li className="text-lg">Update Profile</li> */}

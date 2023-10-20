@@ -9,17 +9,17 @@ import { useState } from "react";
 
 const MainLayout = () => {
 
-    const [icon,setIcon] = useState(true)
+    const [icon,setIcon] = useState(false)
 
     const { toggleTheme } = useTheme()
 
     return (
         <div className="">
-        <div onClick={toggleTheme} className={`btn  btn-sm absolute right-2 top-4 text-black ${icon ? "bg-white":"bg-gray-400"}  border-0`}>
-   <span onClick={()=>setIcon(!icon)}>
+        <div onClick={toggleTheme} className={`  absolute right-2 top-4 text-black ${icon ? "bg-white":"bg-white rounded-2xl"}  border-0`}>
+   <span onClick={()=>setIcon(!icon)} className="btn btn-sm">
     {
 
-       icon? <MdDarkMode className="text-xl"></MdDarkMode> : <BsSun className="text-xl"></BsSun>
+       icon? <MdDarkMode className="text-2xl "></MdDarkMode> : <BsSun className="text-xl"></BsSun>
     }
    </span>
         
