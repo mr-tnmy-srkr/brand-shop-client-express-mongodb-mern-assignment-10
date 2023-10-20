@@ -34,9 +34,7 @@ const Footer = () => {
 					<li>
 						<a rel="noopener noreferrer" href="#">Pricing</a>
 					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">FAQ</a>
-					</li>
+				
 				</ul>
 			</div>
 			<div className="space-y-3">
@@ -47,6 +45,9 @@ const Footer = () => {
 					</li>
 					<li>
 						<a rel="noopener noreferrer" href="#">Terms of Service</a>
+					</li>
+					<li>
+						<a rel="noopener noreferrer" href="#">Service</a>
 					</li>
 				</ul>
 			</div>
@@ -86,7 +87,7 @@ const Footer = () => {
 			</div>
 		</div>
 	</div>
-	<div className="py-6 text-sm text-center dark:text-gray-400">© 1968 Company Co. All rights reserved.</div>
+	<div className="py-6 text-sm text-center dark:text-gray-400">© 2023 Company Co. All rights reserved.</div>
 </footer>
     </div>
   );
