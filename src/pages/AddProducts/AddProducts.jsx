@@ -174,7 +174,7 @@ const AddProducts = () => {
           </div>
 
           <div className="flex justify-end mt-6">
-            <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+            <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-[#95BF46]  rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600">
               Add Product
             </button>
           </div>

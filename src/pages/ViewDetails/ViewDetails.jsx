@@ -40,7 +40,7 @@ const ViewDetails = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({findProduct}),
+      body: JSON.stringify({ findProduct }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -114,7 +114,7 @@ const ViewDetails = () => {
                   </button>
                   <button
                     onClick={() => handleAddToCart(_id)}
-                    className="btn btn-primary capitalize text-white"
+                    className="btn btn-primary capitalize text-white  bg-[#95BF46] border-none rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600"
                   >
                     Add to cart
                   </button>

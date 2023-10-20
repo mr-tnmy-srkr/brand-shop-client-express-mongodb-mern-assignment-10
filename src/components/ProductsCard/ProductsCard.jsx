@@ -41,7 +41,7 @@ const ProductsCard = ({ product }) => {
                   : description
               }`}{" "}
               <Link
-                to={`http://localhost:5173/product/${brand}/${_id}`}
+                to={`http://localhost:5000/product/${brand}/${_id}`}
                 className={`font-bold cursor-pointer ${
                   description.length < 150 && "hidden"
                 }`}
@@ -51,12 +51,12 @@ const ProductsCard = ({ product }) => {
             </p>
             <div className="card-actions justify-end">
               <Link to={`/product/${brand}/${_id}`}>
-                <button className="btn btn-primary capitalize text-white">
+                <button className="btn btn-primary capitalize text-white  bg-[#95BF46] border-none rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600">
                   View Details
                 </button>
               </Link>
               <Link to={`/product/updateProduct/${brand}/${_id}`}>
-                <button className="btn btn-primary capitalize text-white">
+                <button className="btn btn-primary capitalize text-white  bg-[#95BF46] border-none rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600">
                   Update Details
                 </button>
               </Link>

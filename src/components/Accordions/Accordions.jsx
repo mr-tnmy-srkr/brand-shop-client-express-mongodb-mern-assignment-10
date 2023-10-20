@@ -38,7 +38,7 @@ export default function Accordions() {
   What is your return and refund policy?
   </div>
   <div className="collapse-content"> 
-    <p>Answer: Our return and refund policy allows you to return products within 30 days of purchase if you're not completely satisfied. We offer a full refund or exchange for eligible items. Please refer to our Return and Refund Policy for more details.</p>
+    <p>Answer: Our return and refund policy allows you to return products within 30 days of purchase if you are not completely satisfied. We offer a full refund or exchange for eligible items. Please refer to our Return and Refund Policy for more details.</p>
   </div>
 </div><div className="collapse collapse-plus bg-base-200 dark:bg-gray-600 dark:text-gray-100">
   <input type="radio" name="my-accordion-3" /> 

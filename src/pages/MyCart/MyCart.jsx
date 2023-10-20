@@ -10,72 +10,67 @@ const MyCart = () => {
   const [updatedCart, SetUpdatedCart] = useState(cartItems);
 
   // const currentUpdatedCart = updatedCart[0].findProduct
-    // console.log(updatedCart);
-    // console.log(cartItems);
-// .................................
-// const [showCart, setShowCart] = useState(updatedCart)
-// .................................
+  console.log(updatedCart);
+  // console.log(cartItems);
+  // .................................
+  // const [showCart, setShowCart] = useState(updatedCart)
+  // .................................
 
-
-  const handleDelete = (id,idx) => {
+  const handleDelete = (id, idx) => {
     // console.log(id);
 
-// ............................................................
+    // ............................................................
     console.log(id);
-    console.log(idx+1);
+    console.log(idx + 1);
     console.log(updatedCart);
-          const filteredCart = updatedCart.filter((item,idx) => item.findProduct._id !== id);
-          // const filteredCart = updatedCart.filter((item,id) => id !== idx);
-          console.log(filteredCart); 
-// ............................................................
+    const filteredCart = updatedCart.filter(
+      (item, idx) => item.findProduct._id !== id
+    );
+    // const filteredCart = updatedCart.filter((item,id) => id !== idx);
+    console.log(filteredCart);
+    // ............................................................
 
-
-
-
-   Swal.fire({
-      title: 'Are you sure to delete it?',
+    Swal.fire({
+      title: "Are you sure to delete it?",
       text: "You won't be able to revert this!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        
         axios
-        .delete(`http://localhost:5000/myCart/${id}`)
-        .then((response) => {
-          console.log("Delete request successful:", response.data);
-  
-          if (response.data.deletedCount > 0) {
-            Swal.fire({
-              title: "Success!",
-              showClass: {
-                popup: "animate__animated animate__fadeInDown",
-              },
-              hideClass: {
-                popup: "animate__animated animate__fadeOutUp",
-              },
-              text: "Product deleted successfully",
-              icon: "success",
-              confirmButtonText: "Ok",
-            });
-  
-            const filteredCart = updatedCart.filter((item) => item.findProduct._id !== id);
-            console.log(filteredCart);
-            SetUpdatedCart(filteredCart);
-            
-  
-            
-          }
-        })
-        .catch((error) => {
-          console.error("Error deleting data:", error);
-        });
+          .delete(`http://localhost:5000/myCart/${id}`)
+          .then((response) => {
+            console.log("Delete request successful:", response.data);
 
-    }
-  }) 
+            if (response.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Success!",
+                showClass: {
+                  popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                  popup: "animate__animated animate__fadeOutUp",
+                },
+                text: "Product deleted successfully",
+                icon: "success",
+                confirmButtonText: "Ok",
+              });
+
+              const filteredCart = updatedCart.filter(
+                (item) => item._id !== id
+              );
+              console.log(filteredCart);
+              SetUpdatedCart(filteredCart);
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting data:", error);
+          });
+      }
+    });
   };
 
   return (
@@ -122,7 +117,7 @@ const MyCart = () => {
                 <td className="px-6 py-4">{item.findProduct.price}</td>
                 <td className="px-6 py-4">
                   <button
-                    onClick={() => handleDelete(item.findProduct._id,idx)}
+                    onClick={() => handleDelete(item._id, idx)}
                     type="submit"
                     className="dark:bg-white bg-gray-300 p-2 rounded-lg font-medium text-blue-600 dark:text-blue-500 hover:underline"
                   >

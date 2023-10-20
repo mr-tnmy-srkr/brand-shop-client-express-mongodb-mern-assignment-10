@@ -29,7 +29,7 @@ const BrandProduct = () => {
             <div className=" text-center min-h-[50vh] flex items-center justify-center text-2xl font-medium">
           <p >{` Sorry! You did't add any products`}
           <br />
-          <Link to={"/addProduct"}><button className="btn btn-primary capitalize text-white mt-4">Add Product</button></Link> </p>
+          <Link to={"/addProduct"}><button className="btn  bg-[#95BF46] capitalize text-white mt-4">Add Product</button></Link> </p>
           </div>
         )}
       </div>

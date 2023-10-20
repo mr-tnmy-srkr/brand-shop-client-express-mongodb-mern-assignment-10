@@ -15,7 +15,7 @@ const MainLayout = () => {
 
     return (
         <div className="">
-        <div onClick={toggleTheme} className={`  absolute right-2 top-4 text-black ${icon ? "bg-white":"bg-white rounded-2xl"}  border-0`}>
+        <div onClick={toggleTheme} className={`  absolute right-2 top-4 text-black ${icon ? "bg-white rounded-xl":"bg-white rounded-2xl"}  border-0`}>
    <span onClick={()=>setIcon(!icon)} className="btn btn-sm">
     {
 
