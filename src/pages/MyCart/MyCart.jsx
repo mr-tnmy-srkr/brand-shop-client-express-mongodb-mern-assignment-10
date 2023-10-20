@@ -43,21 +43,20 @@ const MyCart = () => {
           console.log(filteredCart);
           SetUpdatedCart(filteredCart);
           
-//           const showCart = updatedCart.filter((item,id) => id !== idx);
-// setShowCart(showCart)
+
           
         }
       })
       .catch((error) => {
         console.error("Error deleting data:", error);
-      });  
+      }); 
 
-/* console.log(id);
+/*  console.log(id);
 console.log(idx+1);
 console.log(updatedCart);
       const filteredCart = updatedCart.filter((item,idx) => item.findProduct._id !== id);
       // const filteredCart = updatedCart.filter((item,id) => id !== idx);
-      console.log(filteredCart); */
+      console.log(filteredCart);  */
 
   };
 
@@ -107,7 +106,7 @@ console.log(updatedCart);
                   <button
                     onClick={() => handleDelete(item.findProduct._id,idx)}
                     type="submit"
-                    className="bg-white p-2 rounded-lg font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    className="dark:bg-white bg-gray-300 p-2 rounded-lg font-medium text-blue-600 dark:text-blue-500 hover:underline"
                   >
                     <AiFillDelete></AiFillDelete>
                   </button>

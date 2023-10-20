@@ -122,7 +122,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="font-bold text-2xl cursor-pointer text-center flex items-center"
+            className="font-bold text-xl md:text-2xl cursor-pointer text-center flex items-center"
           >
             <div className="">
               <img className="h-10 w-14" src={shopify} alt="" />
@@ -183,18 +183,19 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={handleLogout}
-              className="btn btn-info bg-[#95BF46] hover:bg-green-400 border-0 btn-circle capitalize ml-3 px-10 text-white text-lg mr-2"
+              className="btn btn-info bg-[#95BF46] hover:bg-green-400 border-0 btn-circle capitalize ml-3 px-10 text-white text-lg mr-5"
             >
               Logout
             </button>
           ) : (
             <Link to="/login" onClick={handleLogout}>
-              <button className="btn btn-primary bg-[#95BF46] hover:bg-green-400 border-0 btn-circle capitalize ml-3 px-10 text-white text-lg mr-2">
+              <button className="btn btn-primary bg-[#95BF46] hover:bg-green-400 border-0 btn-circle capitalize ml-3 px-10 text-white text-lg mr-5">
                 Login
               </button>
             </Link>
           )}
         </div>
+        <div className="mr-10"></div>
       </div>
       <ToastContainer
         autoClose={4000}
