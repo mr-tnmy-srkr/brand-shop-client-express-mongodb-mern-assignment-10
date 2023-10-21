@@ -4,6 +4,7 @@ import BrandsCard from "../../components/BrandsCard/BrandsCard";
 import Accordions from "../../components/Accordions/Accordions";
 import ContactUs from "../../components/ContactUs/ContactUs";
 import { Helmet } from "react-helmet-async";
+import Testimonial from "../../components/Testimonial/Testimonial";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -25,6 +26,9 @@ const Home = () => {
         {brands?.map((brand) => (
           <BrandsCard key={brand._id} brand={brand}></BrandsCard>
         ))}
+      </div>
+      <div>
+        <Testimonial></Testimonial>
       </div>
       <div className="mb-8">
         <Accordions></Accordions>

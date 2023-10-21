@@ -1,47 +1,4 @@
-import banner_bg from "../../../assets/banner-bg.png";
 import computer from "../../../assets/img-1.png";
-
-/* const Banner = () => {
-  return (
-    <div className="">
-      <div className="relative hidden md:block">
-        <img
-        //   src="https://i.ibb.co/4ZkcXrY/791.jpg"
-        src={banner_bg}
-          alt=""
-          className="w-full h-[90vh]"
-        />
-        {/* <div className="absolute inset-0 bg-black opacity-70"></div> */
-// < className="absolute inset-0 flex items-center justify-center">
-<p className="text-white text-2xl font-semibold ">
-  <div className="flex justify-evenly item-center">
-    <div className="flex-1">
-      <h1>50%disc</h1>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, but the
-        majority have suffered alteration
-      </p>
-    </div>
-    <div className="flex-1">
-      <img src={computer} alt="" />
-    </div>
-  </div>
-</p>;
-// <//div>
-//   </div>
-
-{
-  /* <img
-        className="md:hidden"
-        src="https://i.ibb.co/ypL5Zny/26680.jpg"
-        alt=""
-      /> */
-}
-// </div>
-//   );
-// };
-
-// export default Banner; */
 
 const Banner = () => {
   const bg_image = {
