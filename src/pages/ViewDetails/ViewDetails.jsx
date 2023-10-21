@@ -35,7 +35,7 @@ const ViewDetails = () => {
     const findProduct = products.find((item) => item._id === id);
     console.log(findProduct);
 
-    fetch("http://localhost:5000/cartProduct", {
+    fetch("http://192.168.1.5:5000/cartProduct", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

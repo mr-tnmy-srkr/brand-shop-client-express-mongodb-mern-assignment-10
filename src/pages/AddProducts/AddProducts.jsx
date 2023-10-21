@@ -20,7 +20,7 @@ const AddProducts = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/products",
+        "http://192.168.1.5:5000/products",
         newProduct,
         {
           headers: {

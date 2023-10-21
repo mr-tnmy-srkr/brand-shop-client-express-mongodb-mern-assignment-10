@@ -33,7 +33,7 @@ const UpdateMyProduct = () => {
     };
     console.log(updatedProduct);
 
-    /*  fetch(`http://localhost:5000/product/updateProduct/${brand}/${_id}`, {
+    /*  fetch(`http://192.168.1.5:5000/product/updateProduct/${brand}/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const UpdateMyProduct = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/product/updateProduct/${brand}/${_id}`,
+        `http://192.168.1.5:5000/product/updateProduct/${brand}/${_id}`,
         {
           method: "PUT",
           headers: {

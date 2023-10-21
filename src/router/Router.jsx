@@ -20,13 +20,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () => fetch("http://192.168.1.5:5000/brands"),
       },
       {
         path: "/product/:brandName",
         element: <BrandProduct></BrandProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brandName}`),
+          fetch(`http://192.168.1.5:5000/product/${params.brandName}`),
       },
       {
         path: "/addProduct",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brandName}`),
+          fetch(`http://192.168.1.5:5000/product/${params.brandName}`),
       },
       {
         path: "/product/updateProduct/:brandName/:id",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/product/updateProduct/${params.brandName}/${params.id}`
+            `http://192.168.1.5:5000/product/updateProduct/${params.brandName}/${params.id}`
           ),
       },
       {
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/myCart`),
+        loader: () => fetch(`http://192.168.1.5:5000/myCart`),
       },
       {
         path: "/login",

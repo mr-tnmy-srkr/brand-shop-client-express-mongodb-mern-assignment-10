@@ -6,7 +6,12 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/src/assets/banner-bg.png')",
+        'computer': "url('/src/assets/bg-mob.png')",
+      }
+    },
   },
   plugins: [require("daisyui")],
 }

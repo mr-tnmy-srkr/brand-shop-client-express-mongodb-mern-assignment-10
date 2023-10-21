@@ -33,7 +33,7 @@
 
 - <span style="font-size:22px;color:skyblue;text-decoration:underline">Responsive Design: </span>Create a responsive and mobile-friendly user interface using a combination of CSS framework like `Tailwind CSS` and `DaisyUi`(plugin for Tailwind CSS).
 
-- <span style="font-size:22px;color:skyblue;text-decoration:underline">Dark Mode/Light Mode: </span>I have also implemented both dark mode and light mode in  website that can enhance the user experience and provide options for users to choose the interface that best suits their preferences.It's essential to focus on accessibility, readability, and user-friendliness in both modes to create a well-rounded experience for all visitors.
+- <span style="font-size:22px;color:skyblue;text-decoration:underline">Dark Mode/Light Mode: </span>I have also implemented both `dark mode` and `light mode` in  website that can enhance the user experience and provide options for users to choose the interface that best suits their preferences.It's essential to focus on accessibility, readability, and user-friendliness in both modes to create a well-rounded experience for all visitors.
 
 #
 

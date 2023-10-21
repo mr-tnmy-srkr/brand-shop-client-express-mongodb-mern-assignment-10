@@ -23,7 +23,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/myCart/${id}`)
+          .delete(`http://192.168.1.5:5000/myCart/${id}`)
           .then((response) => {
             console.log("Delete request successful:", response.data);
 
