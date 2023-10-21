@@ -127,7 +127,7 @@ const Navbar = () => {
             <div className="">
               <img className="h-10 w-14" src={shopify} alt="" />
             </div>
-            <div>
+            <div className="hidden md:block">
               <span className="text-[#95BF46] text-5xl">S</span>
               <span className="text-[#95BF46]">hopify</span>
             </div>
@@ -136,7 +136,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="relative gap-5  menu-horizontal px-1 ">{NavLinks}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end pr-3">
           <div className="mr-3 text-xl font-bold hidden md:block">
             <span className="font-medium text-lg">
               <span className="text-md">Hi, </span>

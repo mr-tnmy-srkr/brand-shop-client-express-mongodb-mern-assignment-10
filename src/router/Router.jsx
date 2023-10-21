@@ -20,13 +20,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://192.168.1.5:5000/brands"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/brands"
+          ),
       },
       {
         path: "/product/:brandName",
         element: <BrandProduct></BrandProduct>,
         loader: ({ params }) =>
-          fetch(`http://192.168.1.5:5000/product/${params.brandName}`),
+          fetch(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/${params.brandName}`
+          ),
       },
       {
         path: "/addProduct",
@@ -44,7 +49,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://192.168.1.5:5000/product/${params.brandName}`),
+          fetch(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/${params.brandName}`
+          ),
       },
       {
         path: "/product/updateProduct/:brandName/:id",
@@ -55,7 +62,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://192.168.1.5:5000/product/updateProduct/${params.brandName}/${params.id}`
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${params.brandName}/${params.id}`
           ),
       },
       {
@@ -65,7 +72,10 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://192.168.1.5:5000/myCart`),
+        loader: () =>
+          fetch(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/myCart`
+          ),
       },
       {
         path: "/login",

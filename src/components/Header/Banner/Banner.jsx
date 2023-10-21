@@ -19,7 +19,7 @@ const Banner = () => {
           </h1>
           <p className="font-semibold text-lg">
             Get Rewards Every time you Shop! <br />
-            Join the VIP Club and Get 5% Cashback on Every Order.
+            Join the VIP Club and Get 5% Cashback.
           </p>
         </div>
         <div className="flex-1 text-center mx-auto">

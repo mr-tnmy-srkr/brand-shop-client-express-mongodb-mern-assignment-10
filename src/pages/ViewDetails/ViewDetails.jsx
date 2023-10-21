@@ -33,18 +33,21 @@ const ViewDetails = () => {
   const handleAddToCart = (id) => {
     // console.log(id);
     const findProduct = products.find((item) => item._id === id);
-    console.log(findProduct);
+    // console.log(findProduct);
 
-    fetch("http://192.168.1.5:5000/cartProduct", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ findProduct }),
-    })
+    fetch(
+      "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/cartProduct",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ findProduct }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
         if (data.insertedId) {
           Swal.fire({
@@ -65,7 +68,7 @@ const ViewDetails = () => {
   };
 
   return (
-    <div className="py-8 dark:bg-gray-500 dark:text-gray-100">
+    <div className=" dark:bg-gray-500 dark:text-gray-100">
       <Helmet>
         <title>{`${brand}-${type}`}</title>
       </Helmet>
@@ -73,12 +76,18 @@ const ViewDetails = () => {
         ""
       ) : (
         <>
-          <h1 className=" bg-green-500 max-w-max px-2 rounded-xl text-xl font-bold text-white py-1 mb-8">
+         <div className="pl-2 pt-5">
+         <h1 className=" bg-green-500 max-w-max px-2 rounded-xl text-xl font-bold text-white py-1">
             Brand : {brand}
           </h1>
+         </div>
           <div className="card card-side bg-base-100 shadow-xl flex-col md:flex-row items-center justify-center dark:bg-gray-500 dark:text-gray-100">
             <figure className="flex-1 mx-auto md:w-full">
-              <img className="h-96 object-contain p-4" src={image} alt={`${name}`} />
+              <img
+                className="h-96 object-contain p-4"
+                src={image}
+                alt={`${name}`}
+              />
             </figure>
             <div className="card-body flex-1">
               <div className="space-y-3">
@@ -102,7 +111,7 @@ const ViewDetails = () => {
                     </span>
                   </span>
                 </div>
-                <p>{description}</p>
+                <p className="text-lg">{description}</p>
               </div>
               <div className=" ">
                 <div className="flex">

@@ -20,7 +20,7 @@ const AddProducts = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.1.5:5000/products",
+        "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/products",
         newProduct,
         {
           headers: {
@@ -28,7 +28,7 @@ const AddProducts = () => {
           },
         }
       );
-      console.log(response.data.insertedId);
+      // console.log(response.data.insertedId);
       if (response.data.insertedId) {
         Swal.fire({
           title: "Success!",

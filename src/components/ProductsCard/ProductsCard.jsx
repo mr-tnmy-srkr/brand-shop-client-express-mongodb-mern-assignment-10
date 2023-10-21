@@ -10,10 +10,19 @@ const ProductsCard = ({ product }) => {
   return (
     <div>
       {
-        <div className="card card-compact bg-base-100 shadow-xl dark:bg-gray-800 dark:text-gray-100 pt-8 pb-4">
+        <div className="relative card card-compact bg-base-100 shadow-xl dark:bg-gray-800 dark:text-gray-100 pt-8 pb-4">
           <figure>
             <img className="h-72" src={image} alt={`${name}`} />
           </figure>
+
+          <div className=" pt-5 absolute top-0">
+         <h1 
+         style={{ clipPath: "polygon(0% 0%, 75% 0%, 63% 50%, 75% 100%, 0% 100%)" }}
+          className=" bg-green-500 max-w-max p-2 text-xl font-bold text-white pr-20">
+            {brand}
+          </h1>
+         </div>
+
           <div className="card-body">
             <h2 className="card-title text-3xl">{name}</h2>
             <p className="text-lg">Type : {type}</p>

@@ -23,9 +23,11 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://192.168.1.5:5000/myCart/${id}`)
+          .delete(
+            `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/myCart/${id}`
+          )
           .then((response) => {
-            console.log("Delete request successful:", response.data);
+            // console.log("Delete request successful:", response.data);
 
             if (response.data.deletedCount > 0) {
               Swal.fire({
@@ -56,12 +58,12 @@ const MyCart = () => {
   };
 
   return (
-    <div className="min-h-[70vh] py-8 dark:bg-gray-700 dark:text-gray-100">
+    <div className={`${updatedCart.length && "min-h-[70vh]"} py-8 dark:bg-gray-700 dark:text-gray-100`}>
       <Helmet>
         <title>Shopify | Cart</title>
       </Helmet>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
@@ -83,7 +85,9 @@ const MyCart = () => {
           </thead>
           <tbody>
             {/* {updatedCart?.map((item, idx) => ( */}
-            {updatedCart?.map((item, idx) => (
+            {
+              updatedCart &&
+              updatedCart?.map((item, idx) => (
               <tr
                 key={item._id}
                 className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
@@ -101,16 +105,21 @@ const MyCart = () => {
                   <button
                     onClick={() => handleDelete(item._id)}
                     type="submit"
-                    className="dark:bg-white bg-gray-300 p-2 rounded-lg font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    className="dark:bg-white bg-red-500 p-2 rounded-lg font-medium text-white dark:text-red-500 hover:underline"
                   >
                     <AiFillDelete></AiFillDelete>
                   </button>
                 </td>
               </tr>
-            ))}
+            ))
+            }
           </tbody>
+          
         </table>
       </div>
+     { !updatedCart.length ? <div className="min-h-[60vh] flex justify-center items-center">
+      <p className="text-2xl font-bold">Sorry your cart is empty</p>
+     </div> : ""}
     </div>
   );
 };

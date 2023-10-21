@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const UpdateMyProduct = () => {
   const product = useLoaderData();
-  console.log(product);
+  // console.log(product);
   const { _id, brand, image, name, type, price, rating, description } =
     product || {};
 
@@ -31,9 +31,9 @@ const UpdateMyProduct = () => {
       rating,
       description,
     };
-    console.log(updatedProduct);
+    // console.log(updatedProduct);
 
-    /*  fetch(`http://192.168.1.5:5000/product/updateProduct/${brand}/${_id}`, {
+    /*  fetch(`https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${brand}/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const UpdateMyProduct = () => {
 
     try {
       const response = await fetch(
-        `http://192.168.1.5:5000/product/updateProduct/${brand}/${_id}`,
+        `https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app/product/updateProduct/${brand}/${_id}`,
         {
           method: "PUT",
           headers: {
@@ -58,7 +58,7 @@ const UpdateMyProduct = () => {
         }
       );
       const result = await response.json();
-      console.log(result);
+      // console.log(result);
 
       if (result.acknowledged) {
         Swal.fire({
