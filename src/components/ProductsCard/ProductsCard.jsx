@@ -12,12 +12,12 @@ const ProductsCard = ({ product }) => {
       {
         <div className="card card-compact bg-base-100 shadow-xl dark:bg-gray-800 dark:text-gray-100 pt-8 pb-4">
           <figure>
-            <img className="h-96" src={image} alt={`${name}`} />
+            <img className="h-72" src={image} alt={`${name}`} />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">{name}</h2>
-            <p>{type}</p>
-            <p>{price}</p>
+            <h2 className="card-title text-3xl">{name}</h2>
+            <p className="text-lg">Type : {type}</p>
+            <p className="text-xl">Price : Rs.{price}.00</p>
             <div>
               <StarRatings
                 rating={parseFloat(rating)}
@@ -27,23 +27,23 @@ const ProductsCard = ({ product }) => {
                 starDimension="20px"
                 starSpacing="5px"
               />{" "}
-              <span className="btn btn-sm bg-green-500 text-white">
-                {rating}{" "}
+              <span className="btn btn-sm bg-green-500 text-white border-0">
+                {rating}
                 <span className="text-white">
                   <AiFillStar></AiFillStar>
                 </span>
               </span>
             </div>
-            <p>
+            <p className="text-lg">
               {`${
-                description.length > 150
-                  ? description.slice(0, 150)
+                description.length > 120
+                  ? description.slice(0, 120)
                   : description
               }`}{" "}
               <Link
                 to={`/product/${brand}/${_id}`}
                 className={`font-bold cursor-pointer ${
-                  description.length < 150 && "hidden"
+                  description.length < 120 && "hidden"
                 }`}
               >
                 ...Read more

@@ -5,7 +5,7 @@ export default function Accordions() {
 <div className="">
 <h1 className="text-3xl md:text-5xl font-bold text-center pb-10">Frequently asked questions</h1>
 <div className="collapse collapse-plus bg-base-200 dark:bg-gray-600 dark:text-gray-100">
-  <input type="radio" name="my-accordion-3" checked="checked" /> 
+  <input type="radio" name="my-accordion-3"  /> 
   <div className="collapse-title text-xl font-medium">
   How do I place an order on your e-shop?
   </div>
