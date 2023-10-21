@@ -41,7 +41,7 @@ const ProductsCard = ({ product }) => {
                   : description
               }`}{" "}
               <Link
-                to={`http://localhost:5000/product/${brand}/${_id}`}
+                to={`/product/${brand}/${_id}`}
                 className={`font-bold cursor-pointer ${
                   description.length < 150 && "hidden"
                 }`}

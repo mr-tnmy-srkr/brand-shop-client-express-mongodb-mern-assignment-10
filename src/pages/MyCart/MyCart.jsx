@@ -8,28 +8,10 @@ import { Helmet } from "react-helmet-async";
 const MyCart = () => {
   const cartItems = useLoaderData();
   const [updatedCart, SetUpdatedCart] = useState(cartItems);
+  // console.log(updatedCart);
 
-  // const currentUpdatedCart = updatedCart[0].findProduct
-  console.log(updatedCart);
-  // console.log(cartItems);
-  // .................................
-  // const [showCart, setShowCart] = useState(updatedCart)
-  // .................................
-
-  const handleDelete = (id, idx) => {
+  const handleDelete = (id) => {
     // console.log(id);
-
-    // ............................................................
-    console.log(id);
-    console.log(idx + 1);
-    console.log(updatedCart);
-    const filteredCart = updatedCart.filter(
-      (item, idx) => item.findProduct._id !== id
-    );
-    // const filteredCart = updatedCart.filter((item,id) => id !== idx);
-    console.log(filteredCart);
-    // ............................................................
-
     Swal.fire({
       title: "Are you sure to delete it?",
       text: "You won't be able to revert this!",
@@ -62,7 +44,7 @@ const MyCart = () => {
               const filteredCart = updatedCart.filter(
                 (item) => item._id !== id
               );
-              console.log(filteredCart);
+              // console.log(filteredCart);
               SetUpdatedCart(filteredCart);
             }
           })
@@ -74,7 +56,7 @@ const MyCart = () => {
   };
 
   return (
-    <div className="min-h-[50vh] py-8 dark:bg-gray-700 dark:text-gray-100">
+    <div className="min-h-[70vh] py-8 dark:bg-gray-700 dark:text-gray-100">
       <Helmet>
         <title>Shopify | Cart</title>
       </Helmet>
@@ -117,7 +99,7 @@ const MyCart = () => {
                 <td className="px-6 py-4">{item.findProduct.price}</td>
                 <td className="px-6 py-4">
                   <button
-                    onClick={() => handleDelete(item._id, idx)}
+                    onClick={() => handleDelete(item._id)}
                     type="submit"
                     className="dark:bg-white bg-gray-300 p-2 rounded-lg font-medium text-blue-600 dark:text-blue-500 hover:underline"
                   >
