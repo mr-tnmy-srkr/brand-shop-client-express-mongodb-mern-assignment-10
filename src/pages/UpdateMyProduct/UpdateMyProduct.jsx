@@ -225,7 +225,7 @@ const UpdateMyProduct = () => {
             Go back to previous page
           </h2>
           <span onClick={() => navigate(-1)}>
-            <button className="btn btn-info text-white capitalize btn-sm">
+            <button className="btn btn-info text-white capitalize btn-sm ml-2">
               Click Here
             </button>
           </span>

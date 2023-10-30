@@ -18,7 +18,14 @@
 
 1. [Live Firebase Client Side Link](https://brand-shop-express-mongodb.web.app "https://brand-shop-express-mongodb.web.app")
 
-2. [Live Vercel Server Side Link](https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app")
+2. [Live netlify Client Side Link](https://brand-shop-mern-assignment-10.netlify.app/ "https://brand-shop-mern-assignment-10.netlify.app/")
+
+3. [Live surge Client Side Link](https://brand-shop-mern.surge.sh/ "https://brand-shop-mern.surge.sh/")
+
+4. [Live vercel Client Side Link](https://brand-shop-client-express-mongodb-mern-assignment-10.vercel.app/ "https://brand-shop-client-express-mongodb-mern-assignment-10.vercel.app/")
+
+
+5. [Live Vercel Server Side Link](https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app "https://brand-shop-server-express-mongodb-mern-assignment-10.vercel.app")
 
 ---
 
