@@ -68,7 +68,7 @@ const ViewDetails = () => {
   };
 
   return (
-    <div className=" dark:bg-gray-500 dark:text-gray-100">
+    <div data-aos="flip-down" className=" dark:bg-gray-500 dark:text-gray-100">
       <Helmet>
         <title>{`${brand}-${type}`}</title>
       </Helmet>
@@ -76,11 +76,11 @@ const ViewDetails = () => {
         ""
       ) : (
         <>
-         <div className="pl-2 pt-5">
-         <h1 className=" bg-green-500 max-w-max px-2 rounded-xl text-xl font-bold text-white py-1">
-            Brand : {brand}
-          </h1>
-         </div>
+          <div className="pl-2 pt-5">
+            <h1 className=" bg-green-500 max-w-max px-2 rounded-xl text-xl font-bold text-white py-1">
+              Brand : {brand}
+            </h1>
+          </div>
           <div className="card card-side bg-base-100 shadow-xl flex-col md:flex-row items-center justify-center dark:bg-gray-500 dark:text-gray-100">
             <figure className="flex-1 mx-auto md:w-full">
               <img
@@ -115,13 +115,13 @@ const ViewDetails = () => {
               </div>
               <div className=" ">
                 <div className="flex">
-                  <button
+                  <button data-aos="flip-right"
                     onClick={() => navigate(-1)}
                     className="btn btn-info capitalize text-white mr-4"
                   >
                     Go Back
                   </button>
-                  <button
+                  <button data-aos="flip-left"
                     onClick={() => handleAddToCart(_id)}
                     className="btn btn-primary capitalize text-white  bg-[#95BF46] border-none rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600"
                   >

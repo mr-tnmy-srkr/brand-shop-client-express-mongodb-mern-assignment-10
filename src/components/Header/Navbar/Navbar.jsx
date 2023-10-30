@@ -147,7 +147,7 @@ const Navbar = () => {
           {user ? (
             <label
               tabIndex={0}
-              className="btn btn-ghost btn-circle avatar relative"
+              className="btn btn-ghost btn-circle avatar relative z-10"
             >
               <div className="w-10 rounded-full" onClick={() => setShow(!show)}>
                 <img src={user.photoURL} alt={user.displayName} />
@@ -156,7 +156,7 @@ const Navbar = () => {
           ) : (
             <label
               tabIndex={0}
-              className="btn btn-ghost btn-circle avatar relative"
+              className="btn btn-ghost btn-circle avatar relative z-10"
             >
               <div className="w-10 rounded-full" onClick={() => setShow(!show)}>
                 <RxAvatar size={40} />

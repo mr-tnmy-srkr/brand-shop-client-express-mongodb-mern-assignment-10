@@ -80,7 +80,7 @@ const UpdateMyProduct = () => {
   };
 
   return (
-    <div className="dark:bg-gray-600 dark:text-gray-100">
+    <div data-aos="zoom-in" className="dark:bg-gray-600 dark:text-gray-100">
       <Helmet>
         <title>Update product</title>
       </Helmet>
@@ -215,13 +215,13 @@ const UpdateMyProduct = () => {
               </div>
             </div>
 
-            <div className="flex justify-end mt-6">
+            <div className="flex justify-end my-6">
               <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform   bg-[#95BF46]  rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600 ">
                 Update Product
               </button>
             </div>
           </form>
-          <h2 className="text-xl inline font-semibold  dark:text-black">
+          <h2 className="text-xl inline font-semibold dark:text-black">
             Go back to previous page
           </h2>
           <span onClick={() => navigate(-1)}>

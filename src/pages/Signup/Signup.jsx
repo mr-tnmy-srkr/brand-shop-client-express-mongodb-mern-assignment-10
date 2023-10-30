@@ -105,13 +105,13 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div data-aos="zoom-out">
      <Helmet>
             <title>Sign Up</title>
         </Helmet>
-      <div className="min-h-screen flex items-center justify-center  dark:bg-gradient-to-r from-gray-500 to-gray-300  py-20">
+        <div className="min-h-screen flex items-center justify-center dark:bg-gray-500 dark:text-black p-16">
         <div className="bg-transparent p-10 rounded-lg shadow-lg w-full max-w-md">
-          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          <h2 className="text-3xl font-bold mb-6 text-center ">
             Sign Up
           </h2>
           <form onSubmit={handleRegister} className="space-y-4">
@@ -119,7 +119,7 @@ const Signup = () => {
               <div className="flex-1">
                 <label
                   htmlFor="firstName"
-                  className="block text-lg mb-2 text-gray-800"
+                  className="block text-lg mb-2 "
                 >
                   First Name:
                 </label>
@@ -130,14 +130,14 @@ const Signup = () => {
                   // value={firstName}
 
                   placeholder="Enter your first name"
-                  className="w-full border p-3 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
+                  className="w-full border p-3 rounded  focus:outline-none focus:ring focus:border-blue-300"
                   required
                 />
               </div>
               <div className="flex-1">
                 <label
                   htmlFor="lastName"
-                  className="block text-lg mb-2 text-gray-800"
+                  className="block text-lg mb-2 "
                 >
                   Last Name:
                 </label>
@@ -148,7 +148,7 @@ const Signup = () => {
                   // value={lastName}
 
                   placeholder="Enter your last name"
-                  className="w-full border p-3 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
+                  className="w-full border p-3 rounded  focus:outline-none focus:ring focus:border-blue-300"
                   required
                 />
               </div>
@@ -156,7 +156,7 @@ const Signup = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-lg mb-2 text-gray-800"
+                className="block text-lg mb-2 "
               >
                 Email:
               </label>
@@ -167,14 +167,14 @@ const Signup = () => {
                 //   value={email}
 
                 placeholder="Enter your email"
-                className="w-full border p-3 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full border p-3 rounded  focus:outline-none focus:ring focus:border-blue-300"
                 required
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-lg mb-2 text-gray-800"
+                className="block text-lg mb-2 "
               >
                 Image Link:
               </label>
@@ -185,14 +185,14 @@ const Signup = () => {
                 //   value={email}
 
                 placeholder="Enter your photo URL"
-                className="w-full border p-3 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full border p-3 rounded  focus:outline-none focus:ring focus:border-blue-300"
                 required
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="password"
-                className="block text-lg mb-2 text-gray-800"
+                className="block text-lg mb-2 "
               >
                 Password:
               </label>
@@ -204,7 +204,7 @@ const Signup = () => {
                 //   value={password}
 
                 placeholder="Enter your password"
-                className="w-full border p-3 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-300 "
+                className="w-full border p-3 rounded  focus:outline-none focus:ring focus:border-blue-300 "
                 required
               />
               <span
@@ -224,7 +224,7 @@ const Signup = () => {
             <div>
               <label
                 htmlFor="confirmPassword"
-                className="block text-lg mb-2 text-gray-800"
+                className="block text-lg mb-2 "
               >
                 Confirm Password:
               </label>
@@ -236,7 +236,7 @@ const Signup = () => {
                 //   value={confirmPassword}
 
                 placeholder="Confirm your password"
-                className="w-full border p-3 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
+                className="w-full border p-3 rounded  focus:outline-none focus:ring focus:border-blue-300"
                 required
               />
             </div>
@@ -257,7 +257,7 @@ const Signup = () => {
             </p>
 
             {errorMessage && (
-              <p className="text-yellow-600 font-bold">{errorMessage}</p>
+              <p className="text-red-600 font-bold">{errorMessage}</p>
             )}
 
             <button
@@ -282,7 +282,7 @@ const Signup = () => {
           <br />
           <div className="relative ">
             <div className="border-t border-gray-800 w-full absolute"></div>
-            <div className="absolute -top-3 left-1/2 bg-white px-4 transform -translate-x-1/2">
+            <div className="absolute -top-3 left-1/2 bg-white dark:bg-gray-500 px-4 transform -translate-x-1/2">
               or
             </div>
           </div>

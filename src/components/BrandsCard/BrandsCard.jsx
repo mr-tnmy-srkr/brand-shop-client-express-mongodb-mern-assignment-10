@@ -5,7 +5,7 @@ const BrandsCard = ({ brand }) => {
   const { brand_name, brand_image } = brand || {};
 
   return (
-    <div>
+    <div data-aos="flip-left">
     <Link to={`/product/${brand_name}`}>
       <div className="card card-compact shadow-xl dark:bg-gray-500 dark:text-white">
         <figure className="pt-8">

@@ -2,7 +2,7 @@
 export default function Accordions() {
     return (
         
-<div className="">
+<div data-aos="flip-right" className="">
 <h1 className="text-3xl md:text-5xl font-bold text-center pb-10">Frequently asked questions</h1>
 <div className="collapse collapse-plus bg-base-200 dark:bg-gray-600 dark:text-gray-100">
   <input type="radio" name="my-accordion-3"  /> 

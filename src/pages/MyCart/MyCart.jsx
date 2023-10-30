@@ -58,7 +58,9 @@ const MyCart = () => {
   };
 
   return (
-    <div className={`${updatedCart.length && "min-h-[70vh]"} py-8 dark:bg-gray-700 dark:text-gray-100`}>
+    <div
+    data-aos="zoom-in"
+      className={`min-h-[70vh] py-8 dark:bg-gray-700 dark:text-gray-100`}>
       <Helmet>
         <title>Shopify | Cart</title>
       </Helmet>
@@ -85,41 +87,42 @@ const MyCart = () => {
           </thead>
           <tbody>
             {/* {updatedCart?.map((item, idx) => ( */}
-            {
-              updatedCart &&
+            {updatedCart &&
               updatedCart?.map((item, idx) => (
-              <tr
-                key={item._id}
-                className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
-              >
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                <tr
+                  key={item._id}
+                  className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
                 >
-                  {`${idx + 1}. ${item.findProduct.name}`}
-                </th>
-                <td className="px-6 py-4">{item.findProduct.brand}</td>
-                <td className="px-6 py-4">{item.findProduct.type}</td>
-                <td className="px-6 py-4">{item.findProduct.price}</td>
-                <td className="px-6 py-4">
-                  <button
-                    onClick={() => handleDelete(item._id)}
-                    type="submit"
-                    className="dark:bg-white bg-red-500 p-2 rounded-lg font-medium text-white dark:text-red-500 hover:underline"
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    <AiFillDelete></AiFillDelete>
-                  </button>
-                </td>
-              </tr>
-            ))
-            }
+                    {`${idx + 1}. ${item.findProduct.name}`}
+                  </th>
+                  <td className="px-6 py-4">{item.findProduct.brand}</td>
+                  <td className="px-6 py-4">{item.findProduct.type}</td>
+                  <td className="px-6 py-4">{item.findProduct.price}</td>
+                  <td className="px-6 py-4">
+                    <button
+                      onClick={() => handleDelete(item._id)}
+                      type="submit"
+                      className="dark:bg-white bg-red-500 p-2 rounded-lg font-medium text-white dark:text-red-500 hover:underline"
+                    >
+                      <AiFillDelete></AiFillDelete>
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
-          
         </table>
       </div>
-     { !updatedCart.length ? <div className="min-h-[60vh] flex justify-center items-center">
-      <p className="text-2xl font-bold">Sorry your cart is empty</p>
-     </div> : ""}
+      {!updatedCart.length ? (
+        <div className="min-h-[60vh] flex justify-center items-center">
+          <p className="text-2xl font-bold">Sorry your cart is empty</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

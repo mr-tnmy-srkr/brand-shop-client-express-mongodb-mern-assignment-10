@@ -50,7 +50,7 @@ const AddProducts = () => {
   };
 
   return (
-    <div className="pb-8 dark:bg-gray-600 dark:text-gray-100">
+    <div data-aos="zoom-in" className="pb-8 dark:bg-gray-600 dark:text-gray-100">
       <Helmet>
         <title>Add products</title>
       </Helmet>

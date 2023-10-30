@@ -57,21 +57,21 @@ const Login = () => {
   };
 
   return (
-    <div className="">
+    <div data-aos="zoom-out" className="">
       <Helmet>
             <title>Login</title>
         </Helmet>
 
-      <div className="min-h-screen flex items-center justify-center dark:bg-gradient-to-r from-gray-500 to-gray-300 ">
+      <div className="min-h-screen flex items-center justify-center dark:bg-gray-500 dark:text-black ">
         <div className="bg-transparent p-10 rounded-lg shadow-lg w-full max-w-md">
-          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          <h2 className="text-3xl font-bold mb-6 text-center">
             Login
           </h2>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label
                 htmlFor="email"
-                className="block text-lg mb-2 text-gray-800"
+                className="block text-lg mb-2 "
               >
                 Email:
               </label>
@@ -88,7 +88,7 @@ const Login = () => {
             <div className="relative">
               <label
                 htmlFor="password"
-                className="block text-lg mb-2 text-gray-800"
+                className="block text-lg mb-2 "
               >
                 Password:
               </label>
@@ -137,7 +137,7 @@ const Login = () => {
           <br />
           <div className="relative ">
             <div className="border-t border-gray-800 w-full absolute"></div>
-            <div className="absolute -top-3 left-1/2 bg-white px-4 transform -translate-x-1/2">
+            <div className="absolute -top-3 left-1/2 bg-white dark:bg-gray-500 px-4 transform -translate-x-1/2">
               or
             </div>
           </div>

@@ -4,10 +4,10 @@ const Testimonial = () => {
         <div>
             <section className="my-8  dark:bg-gray-800 dark:text-gray-100">
 	<div className=" flex flex-col items-center mx-auto py-6">
-		<h1 className=" leadi text-center text-3xl md:text-5xl font-bold">{`Client's Testimonials`}</h1>
+		<h1 data-aos="fade-up" className=" leadi text-center text-3xl md:text-5xl font-bold">{`Client's Testimonials`}</h1>
 	</div>
-	<div className="  flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
-		<div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+	<div  className="  flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
+		<div data-aos="flip-up" className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
 			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-900">
 				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 dark:text-violet-400">
@@ -26,7 +26,7 @@ const Testimonial = () => {
 				<p className="text-sm uppercase">Pixel User</p>
 			</div>
 		</div>
-		<div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+		<div data-aos="flip-up" className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
 			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-900">
 				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 dark:text-violet-400">
@@ -45,7 +45,7 @@ const Testimonial = () => {
 				<p className="text-sm uppercase">Apple user</p>
 			</div>
 		</div>
-		<div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+		<div data-aos="flip-up" className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
 			<div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-900">
 				<p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 dark:text-violet-400">

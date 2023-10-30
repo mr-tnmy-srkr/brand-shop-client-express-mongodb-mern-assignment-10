@@ -10,7 +10,7 @@ const ProductsCard = ({ product }) => {
   return (
     <div>
       {
-        <div className="relative card card-compact bg-base-100 shadow-xl dark:bg-gray-800 dark:text-gray-100 pt-8 pb-4">
+        <div data-aos="zoom-in" className="relative card card-compact bg-base-100 shadow-xl dark:bg-gray-800 dark:text-gray-100 pt-8 pb-4">
           <figure>
             <img className="h-72" src={image} alt={`${name}`} />
           </figure>
@@ -59,12 +59,12 @@ const ProductsCard = ({ product }) => {
               </Link>
             </p>
             <div className="card-actions justify-end">
-              <Link to={`/product/${brand}/${_id}`}>
+              <Link to={`/product/${brand}/${_id}`} data-aos="flip-up">
                 <button className="btn btn-primary capitalize text-white  bg-[#95BF46] border-none rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600">
                   View Details
                 </button>
               </Link>
-              <Link to={`/product/updateProduct/${brand}/${_id}`}>
+              <Link to={`/product/updateProduct/${brand}/${_id}`} data-aos="flip-down">
                 <button className="btn btn-primary capitalize text-white  bg-[#95BF46] border-none rounded-md hover:bg-[#b5d578] focus:outline-none focus:bg-green-600">
                   Update Details
                 </button>
